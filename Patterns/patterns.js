@@ -207,27 +207,27 @@
 // console.log(sameFrequency(182, 281));
 // console.log(sameFrequency(82, 281));
 
-function areThereDuplicates() {
-	if (Object.keys(arguments).length === 0) {
-		return false;
-	}
+// function areThereDuplicates() {
+// 	if (Object.keys(arguments).length === 0) {
+// 		return false;
+// 	}
 
-	let items = {};
+// 	let items = {};
 
-	for (let val in arguments) {
-		items[arguments[val]] = (items[arguments[val]] || 0) + 1;
-	}
+// 	for (let val in arguments) {
+// 		items[arguments[val]] = (items[arguments[val]] || 0) + 1;
+// 	}
 
-	//Looping again to see if there's any greater than 1.
-	for (let key in items) {
-		if (items[key] > 1) {
-			return true;
-		}
-	}
-	return false;
-}
+// 	//Looping again to see if there's any greater than 1.
+// 	for (let key in items) {
+// 		if (items[key] > 1) {
+// 			return true;
+// 		}
+// 	}
+// 	return false;
+// }
 
-console.log(areThereDuplicates(1, 2, 3, 4, 4));
+// console.log(areThereDuplicates(1, 2, 3, 4, 4));
 
 // function areThereDuplicates() {
 // 	let collection = {};
@@ -244,3 +244,32 @@ console.log(areThereDuplicates(1, 2, 3, 4, 4));
 
 // areThereDuplicates(1, 2, 3, 4, 4);
 // console.log(areThereDuplicates(1, 2, 3, 4, 4));
+
+//This only works with a sorted array!
+//Two moving pointer rule of thumb, result is too high, move the high down. Too low, move the low up.
+// function averagePair(arr, avg) {
+// 	if (arr.length === 0) return false;
+
+// 	//Left Pointer
+// 	let start = 0;
+
+// 	//Right Pointer
+// 	let end = arr.length - 1;
+
+// 	//While this array exists on the number line
+// 	while (start < end) {
+// 		// Test the two pointers
+// 		let avgTest = arr[start] + arr[end] / 2;
+// 		//True? Done
+// 		if (avgTest === avg) return true;
+// 		//Avg is lower than expected move the low in
+// 		else if (avgTest < avg) start++;
+// 		//If higher move the high down
+// 		else end--;
+// 	}
+// 	return false;
+// }
+
+// console.log(averagePair([1, 2, 44, 4, 5], 2.5));
+
+function isSubsequence(str1, str2) {}
