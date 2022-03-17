@@ -206,3 +206,41 @@
 // }
 // console.log(sameFrequency(182, 281));
 // console.log(sameFrequency(82, 281));
+
+function areThereDuplicates() {
+	if (Object.keys(arguments).length === 0) {
+		return false;
+	}
+
+	let items = {};
+
+	for (let val in arguments) {
+		items[arguments[val]] = (items[arguments[val]] || 0) + 1;
+	}
+
+	//Looping again to see if there's any greater than 1.
+	for (let key in items) {
+		if (items[key] > 1) {
+			return true;
+		}
+	}
+	return false;
+}
+
+console.log(areThereDuplicates(1, 2, 3, 4, 4));
+
+// function areThereDuplicates() {
+// 	let collection = {};
+// 	for (let val in arguments) {
+// 		collection[arguments[val]] = (collection[arguments[val]] || 0) + 1;
+// 	}
+
+// 	console.log(collection);
+// 	for (let key in collection) {
+// 		if (collection[key] > 1) return true;
+// 	}
+// 	return false;
+// }
+
+// areThereDuplicates(1, 2, 3, 4, 4);
+// console.log(areThereDuplicates(1, 2, 3, 4, 4));
