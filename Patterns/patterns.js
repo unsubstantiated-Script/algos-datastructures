@@ -272,4 +272,24 @@
 
 // console.log(averagePair([1, 2, 44, 4, 5], 2.5));
 
-function isSubsequence(str1, str2) {}
+function isSubsequence(str1, str2) {
+	if (str2.length === 0) return false;
+
+	let i = 0;
+	let j = 0;
+
+	//If there's no sub string then this should maybe return false
+	if (!str1) return true;
+
+	//iterating over the master string using j as index
+	while (j < str2.length) {
+		//If these items match, then advance index in i
+		if (str2[j] === str1[i]) i++;
+		//if it made it all the way through the substring it must be correct
+		if (i === str1.length) return true;
+		//Advance the pointer in the master string
+		j++;
+	}
+	//If the pointer doesn't advance on the first string, the loop will finish and kick out false
+	return false;
+}
